@@ -4,9 +4,9 @@
 
 import { readdir, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
-import { buildLookup, type Campaign } from "./db.ts";
-import { parseLockfile } from "./lockfile.ts";
-import { runSystemChecks, type SystemCheckResult } from "./system.ts";
+import { buildLookup, type Campaign } from "./db.js";
+import { parseLockfile } from "./lockfile.js";
+import { runSystemChecks, type SystemCheckResult } from "./system.js";
 
 export interface ScanOptions {
 	lockfilesOnly?: boolean;

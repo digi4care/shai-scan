@@ -4,16 +4,27 @@
   "description": "Zero-dependency CLI scanner for npm/PyPI supply chain compromises. Detects compromised packages in lockfiles and system-level IOCs from attacks like Mini Shai-Hulud (CVE-2026-45321).",
   "type": "module",
   "bin": {
-    "shai-scan": "./src/cli.ts"
+    "shai-scan": "./dist/cli.js"
   },
-  "files": ["src/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "scan": "bun run src/cli.ts",
+    "build": "tsc -p tsconfig.build.json",
     "check": "biome check src/",
     "check:fix": "biome check --fix src/",
     "release": "bumpp && npm publish"
   },
-  "keywords": ["security", "supply-chain", "npm", "scanner", "malware", "shai-hulud", "CVE-2026-45321"],
+  "keywords": [
+    "security",
+    "supply-chain",
+    "npm",
+    "scanner",
+    "malware",
+    "shai-hulud",
+    "CVE-2026-45321"
+  ],
   "author": "Chris Engelhard",
   "license": "MIT",
   "repository": {
@@ -30,6 +41,7 @@
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
     "@biomejs/biome": "^2.0.0",
+    "@types/node": "^25.8.0",
     "bumpp": "^10.1.0",
     "typescript": "^5.8.0"
   }
