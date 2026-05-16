@@ -1,0 +1,36 @@
+{
+  "name": "shai-scan",
+  "version": "0.1.0",
+  "description": "Zero-dependency CLI scanner for npm/PyPI supply chain compromises. Detects compromised packages in lockfiles and system-level IOCs from attacks like Mini Shai-Hulud (CVE-2026-45321).",
+  "type": "module",
+  "bin": {
+    "shai-scan": "./src/cli.ts"
+  },
+  "files": ["src/"],
+  "scripts": {
+    "scan": "bun run src/cli.ts",
+    "check": "biome check src/",
+    "check:fix": "biome check --fix src/",
+    "release": "bumpp && npm publish"
+  },
+  "keywords": ["security", "supply-chain", "npm", "scanner", "malware", "shai-hulud", "CVE-2026-45321"],
+  "author": "Chris Engelhard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digi4care/shai-scan"
+  },
+  "bugs": {
+    "url": "https://github.com/digi4care/shai-scan/issues"
+  },
+  "homepage": "https://github.com/digi4care/shai-scan#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "bumpp": "^10.1.0",
+    "typescript": "^5.8.0"
+  }
+}
