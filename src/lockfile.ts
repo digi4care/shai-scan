@@ -81,8 +81,8 @@ function walkPackageLockV1(deps: Record<string, unknown>, out: Map<string, strin
 
 function parseBunLock(path: string, content: string): LockfileResult | null {
 	const packages = new Map<string, string>();
-	// Match lines like: "pkg": ["pkg@version",
-	const re = /"([^"]+)":\s*\["([^"@]+@([^"]+))"/g;
+	// Match lines like: "pkg": ["pkg@version" — non-greedy before @ handles scoped @scope/pkg
+	const re = /"([^"]+)":\s*\["([^"]+?)@([^"]+)"/g;
 	let m: RegExpExecArray | null = re.exec(content);
 	while (m !== null) {
 		const name = m[1];
