@@ -5,8 +5,8 @@
 
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { CAMPAIGNS } from "./db.ts";
-import { type LockfileFinding, type ScanOptions, type ScanResult, scan } from "./scanner.ts";
+import { CAMPAIGNS } from "./db.js";
+import { type LockfileFinding, type ScanOptions, type ScanResult, scan } from "./scanner.js";
 
 const VERSION = "0.1.0";
 

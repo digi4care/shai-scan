@@ -51,9 +51,9 @@ From source:
 git clone https://github.com/digi4care/shai-scan.git
 cd shai-scan
 pnpm install
-node src/cli.ts --help        # Node.js ≥ 22 (v24+ runs .ts natively)
-# or
-bun run src/cli.ts --help
+bun run src/cli.ts --help   # Bun (recommended for development)
+# or build and run with Node.js:
+pnpm run build && node dist/cli.js --help
 ```
 
 ## Usage
@@ -193,7 +193,7 @@ When a new supply chain attack is discovered, update `src/db.ts`:
 2. Append a new `Campaign` object to the `CAMPAIGNS` array, including CVE/GHSA identifiers, severity, description, reference URLs, and IOC indicators
 3. The `buildLookup()` function automatically rebuilds the lookup map on the next run
 
-No rebuild step is required. Changes to `src/db.ts` take effect immediately — the project runs TypeScript directly via Node.js (v22+) or Bun.
+No rebuild step is required when using Bun. Changes to `src/db.ts` take effect immediately with `bun run src/cli.ts`. For the npm package, run `pnpm run build` after editing.
 
 ## Security Considerations
 
