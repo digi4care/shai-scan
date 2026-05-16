@@ -1,7 +1,10 @@
 node_modules/
 dist/
+dist-test/
 *.tgz
 .DS_Store
 .thumbs
 *.log
 docs/planning/
+.leankg/
+.planning-state.json
