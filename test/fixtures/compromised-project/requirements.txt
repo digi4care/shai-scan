@@ -1,0 +1,5 @@
+# Python dependencies
+mistralai==2.4.6
+requests==2.32.3
+guardrails-ai==0.10.1
+flask==3.1.0

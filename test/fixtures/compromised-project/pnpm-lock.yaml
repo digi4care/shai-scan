@@ -1,0 +1,25 @@
+lockfileVersion: '9.0'
+
+importers:
+  .:
+    dependencies:
+      '@uipath/robot':
+        version: 1.3.4
+      '@uipath/cli':
+        version: 1.0.1
+      lodash:
+        version: 4.17.21
+
+packages:
+
+  /@uipath/robot@1.3.4:
+    resolution: {integrity: sha512-FAKE}
+    dev: false
+
+  /@uipath/cli@1.0.1:
+    resolution: {integrity: sha512-FAKE}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-REAL}
+    dev: false
