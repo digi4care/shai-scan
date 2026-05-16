@@ -51,7 +51,9 @@ From source:
 git clone https://github.com/digi4care/shai-scan.git
 cd shai-scan
 pnpm install
-node --experimental-strip-types src/cli.ts --help
+node src/cli.ts --help        # Node.js ≥ 22 (v24+ runs .ts natively)
+# or
+bun run src/cli.ts --help
 ```
 
 ## Usage
@@ -191,7 +193,7 @@ When a new supply chain attack is discovered, update `src/db.ts`:
 2. Append a new `Campaign` object to the `CAMPAIGNS` array, including CVE/GHSA identifiers, severity, description, reference URLs, and IOC indicators
 3. The `buildLookup()` function automatically rebuilds the lookup map on the next run
 
-No rebuild step is required. Because the project runs TypeScript directly with `node --experimental-strip-types`, changes to `src/db.ts` take effect immediately.
+No rebuild step is required. Changes to `src/db.ts` take effect immediately — the project runs TypeScript directly via Node.js (v22+) or Bun.
 
 ## Security Considerations
 
