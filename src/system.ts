@@ -6,7 +6,7 @@ import { execSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
-import { CAMPAIGNS, type Campaign } from "./db.js";
+import { CAMPAIGNS, type Campaign } from "./db.ts";
 
 export interface SystemCheckResult {
 	check: string;

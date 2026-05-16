@@ -1,0 +1,6 @@
+# THIS IS A FAKE bun.lock FOR TESTING PURPOSES ONLY
+
+"@squawk/mcp": ["@squawk/mcp@0.9.4", "", { "dependencies": {} }, "sha512-FAKE"]
+"@squawk/weather": ["@squawk/weather@0.5.9", "", { "dependencies": {} }, "sha512-FAKE"]
+"@mistralai/mistralai": ["@mistralai/mistralai@2.2.3", "", { "dependencies": { "zod": "^3.20.0" } }, "sha512-FAKE"]
+"react": ["react@19.1.0", "", { "dependencies": {} }, "sha512-REAL"]
