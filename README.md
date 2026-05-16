@@ -2,7 +2,7 @@
 
 > Zero-dependency CLI scanner for npm and PyPI supply chain compromises.
 
-[![npm version](https://img.shields.io/npm/v/shai-scan)](https://www.npmjs.com/package/shai-scan)
+[![npm version](https://img.shields.io/npm/v/@digi4care/shai-scan)](https://www.npmjs.com/package/@digi4care/shai-scan)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D22-brightgreen)](https://nodejs.org/)
 
@@ -28,21 +28,21 @@ No installation required. Run directly with your package runner of choice:
 
 ```bash
 # npx
-npx shai-scan
+npx @digi4care/shai-scan
 
 # bunx
-bunx shai-scan
+bunx @digi4care/shai-scan
 
 # pnpm dlx
-pnpm dlx shai-scan
+pnpm dlx @digi4care/shai-scan
 ```
 
 Global install (optional):
 
 ```bash
-npm install -g shai-scan
+npm install -g @digi4care/shai-scan
 # or
-pnpm add -g shai-scan
+pnpm add -g @digi4care/shai-scan
 ```
 
 From source:
@@ -61,32 +61,32 @@ bun run src/cli.ts --help
 ### Scan the current project
 
 ```bash
-npx shai-scan
+npx @digi4care/shai-scan
 ```
 
 ### Scan a specific path
 
 ```bash
-npx shai-scan ~/projects/my-app
+npx @digi4care/shai-scan ~/projects/my-app
 ```
 
 ### JSON output for automation
 
 ```bash
-npx shai-scan --json .
+npx @digi4care/shai-scan --json .
 ```
 
 ### SARIF output for GitHub Code Scanning
 
 ```bash
-npx shai-scan --sarif --sarif-file results.sarif .
+npx @digi4care/shai-scan --sarif --sarif-file results.sarif .
 ```
 
 ### CI/CD exit codes
 
 ```bash
 #!/bin/bash
-npx shai-scan --severity high . || {
+npx @digi4care/shai-scan --severity high . || {
   code=$?
   if [ "$code" -eq 1 ]; then
     echo "Supply chain findings detected"
@@ -120,7 +120,7 @@ jobs:
         with:
           node-version: 22
       - run: pnpm install --frozen-lockfile
-      - run: npx shai-scan --severity high .
+      - run: npx @digi4care/shai-scan --severity high .
 ```
 
 ### GitHub Actions (SARIF upload)
@@ -147,7 +147,7 @@ jobs:
         with:
           node-version: 22
       - run: pnpm install --frozen-lockfile
-      - run: npx shai-scan --sarif --sarif-file results.sarif .
+      - run: npx @digi4care/shai-scan --sarif --sarif-file results.sarif .
       - uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results.sarif
